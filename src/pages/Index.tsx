@@ -272,43 +272,43 @@ const Index = () => {
   return (
     <div className="h-screen flex bg-background">
       {/* Sidebar */}
-      <div className="w-64 bg-sidebar border-r border-sidebar-border flex flex-col animate-slide-in-right">
-        <div className="p-6 border-b border-sidebar-border">
+      <div className="w-1/5 min-w-[180px] max-w-[220px] bg-sidebar border-r border-sidebar-border flex flex-col animate-slide-in-right lg:w-64">
+        <div className="p-3 lg:p-6 border-b border-sidebar-border">
           <div className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-gradient-to-br from-primary to-purple-600 rounded-lg flex items-center justify-center">
               <Icon name="Brain" size={18} className="text-white" />
             </div>
-            <h1 className="text-xl font-bold bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
+            <h1 className="text-lg lg:text-xl font-bold bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
               AI Chat 5
             </h1>
           </div>
         </div>
         
-        <nav className="flex-1 p-4">
+        <nav className="flex-1 p-2 lg:p-4">
           <div className="space-y-2">
             {menuItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => setActiveSection(item.id)}
-                className={`w-full flex items-center space-x-3 px-3 py-2 rounded-lg transition-all duration-200 ${
+                className={`w-full flex items-center space-x-2 lg:space-x-3 px-2 lg:px-3 py-2 rounded-lg transition-all duration-200 ${
                   activeSection === item.id
                     ? 'bg-sidebar-accent text-sidebar-accent-foreground'
                     : 'text-sidebar-foreground hover:bg-sidebar-accent/50'
                 }`}
               >
                 <Icon name={item.icon} size={18} />
-                <span className="font-medium">{item.name}</span>
+                <span className="font-medium text-sm lg:text-base hidden sm:block lg:block">{item.name}</span>
               </button>
             ))}
           </div>
         </nav>
         
-        <div className="p-4 border-t border-sidebar-border">
+        <div className="p-2 lg:p-4 border-t border-sidebar-border">
           <div className="flex items-center space-x-3">
             <Avatar className="w-8 h-8">
               <AvatarFallback className="bg-primary text-primary-foreground">ПО</AvatarFallback>
             </Avatar>
-            <div className="flex-1 min-w-0">
+            <div className="flex-1 min-w-0 hidden lg:block">
               <p className="text-sm font-medium text-sidebar-foreground truncate">Пользователь</p>
               <p className="text-xs text-sidebar-foreground/70">Pro план</p>
             </div>
